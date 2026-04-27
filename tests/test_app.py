@@ -21,7 +21,7 @@ def test_root_redirects_to_index_html():
     # (no setup needed, state is reset by fixture)
 
     # Act
-    response = client.get("/", allow_redirects=False)
+    response = client.get("/", follow_redirects=False)
 
     # Assert
     assert response.status_code == 307
